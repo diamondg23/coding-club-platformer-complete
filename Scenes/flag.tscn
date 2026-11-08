@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dloca2yqva4d7"]
+
+[ext_resource type="Texture2D" uid="uid://dqo3kxpibkud7" path="res://resources/flag.png" id="1_snk6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8v2e"]
+size = Vector2(121, 110)
+
+[node name="Flag" type="Area2D" unique_id=97187615]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=774145048]
+texture = ExtResource("1_snk6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301765917]
+position = Vector2(-3.5, 1)
+shape = SubResource("RectangleShape2D_l8v2e")

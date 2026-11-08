@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bbdwxrylweb5b"]
+
+[ext_resource type="Script" uid="uid://bdgv1fgudpier" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dssn3h5mr6lj2" path="res://resources/bcd6400f-b6dc-473c-962e-48e144ac8027.png" id="2_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8v2e"]
+size = Vector2(299, 439)
+
+[node name="Player" type="CharacterBody2D" unique_id=1230290480]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=454653718]
+position = Vector2(-6.5, -0.5)
+shape = SubResource("RectangleShape2D_l8v2e")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=474760248]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6t5aa")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1904478801]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

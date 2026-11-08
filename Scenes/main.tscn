@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://tb7r32i2hpmf"]
+
+[ext_resource type="PackedScene" uid="uid://bbtcjymgerp4b" path="res://Scenes/platform.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bbdwxrylweb5b" path="res://Scenes/player.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dloca2yqva4d7" path="res://Scenes/flag.tscn" id="3_8gbba"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8v2e"]
+font_size = 60
+
+[node name="Main" type="Node2D" unique_id=1355676057]
+
+[node name="Platform2" parent="." unique_id=1742594568 instance=ExtResource("1_bo1nx")]
+position = Vector2(582.0001, 793.00006)
+rotation = 2.3561945
+scale = Vector2(0.1, 0.1)
+
+[node name="Player" parent="." unique_id=1230290480 instance=ExtResource("2_8gbba")]
+z_index = 1
+position = Vector2(31.000002, 961)
+scale = Vector2(0.1, 0.1)
+
+[node name="Platform" parent="." unique_id=1984301549 instance=ExtResource("1_bo1nx")]
+position = Vector2(132.99998, 1058)
+scale = Vector2(0.2, 0.2)
+
+[node name="Platform3" parent="." unique_id=663990088 instance=ExtResource("1_bo1nx")]
+position = Vector2(1292, 610)
+scale = Vector2(0.2, 0.2)
+
+[node name="Flag" parent="." unique_id=97187615 instance=ExtResource("3_8gbba")]
+position = Vector2(1364, 534)
+
+[node name="Platform4" parent="." unique_id=122407256 instance=ExtResource("1_bo1nx")]
+position = Vector2(357, 914)
+scale = Vector2(0.2, 0.2)
+
+[node name="Platform5" parent="." unique_id=1244783685 instance=ExtResource("1_bo1nx")]
+position = Vector2(687, 881)
+rotation = 1.5707964
+scale = Vector2(0.3, 0.3)
+
+[node name="Platform6" parent="." unique_id=600188622 instance=ExtResource("1_bo1nx")]
+position = Vector2(917.99994, 606)
+scale = Vector2(0.2, 0.2)
+
+[node name="Label" type="Label" parent="." unique_id=1631221041]
+visible = false
+offset_left = 433.0
+offset_top = 169.0
+offset_right = 1603.0
+offset_bottom = 756.0
+text = "You win!"
+label_settings = SubResource("LabelSettings_l8v2e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Flag" to="Player" method="_on_flag_area_entered"]
+[connection signal="body_entered" from="Flag" to="Player" method="_on_flag_body_entered"]
