@@ -17,8 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-#inside of this function check the velocity of the player and flip the sprite if the player is facing left and flip it back if player is facing right
+#inside of this function check the x velocity of the player and flip the sprite if the player is facing left and flip it back if player is facing right
 func _process(delta: float) -> void:
+	if velocity.x < 0 and $Image.flip_h == false:
+		$Image.flip_h = true
+	elif velocity.x > 0 and $Image.flip_h == true:
+		$Image.flip_h = false
 	pass
 
 # This function is called automatically when a keyboard button is pressed.
